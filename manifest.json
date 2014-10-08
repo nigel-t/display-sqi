@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "Display SQI",
+  "version": "0.2.1",
+  "description": "See SQI scores for ShareThis in-netowrk publishers as you browse the web.",
+
+  "browser_action": {
+    "default_icon": "sqi19.png"
+  },
+    "icons": { 
+        "16": "getsqi-logo-small.png",
+        "48": "getsqi-logo-medium.png",
+        "128": "getsqi-logo-large.png" },
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+      
+  "permissions": ["<all_urls>"],
+    
+    "content_scripts": [
+        {
+            "matches": ["http://*/*","https://*/*"],
+            "js": ["jquery.js", "content.js"]
+        }
+    ]
+}
